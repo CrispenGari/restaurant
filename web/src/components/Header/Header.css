@@ -1,0 +1,51 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--main-color);
+  padding: 10px 30px;
+  user-select: none;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header__right__cart {
+  color: white;
+  font-size: 2rem;
+}
+
+.header__right > button {
+  background-color: var(--color-pink);
+  width: fit-content;
+  padding: 7px;
+  outline: none;
+  margin-left: 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  transition: all 1s;
+}
+.header__right__cart__badge {
+  cursor: pointer;
+}
+.header__right > button:hover {
+  cursor: pointer;
+  background-color: var(--color-light-pink);
+}
+.header__left > img {
+  width: 40px;
+  -webkit-user-drag: none;
+  cursor: pointer;
+}
+.header__right {
+  display: flex;
+  align-items: center;
+}
+.header__right > a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 10px;
+}

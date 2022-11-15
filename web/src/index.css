@@ -1,0 +1,22 @@
+@import url(https://fonts.googleapis.com/css?family=Trirong);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --main-color: #173728;
+  --main-light: #40785c;
+  --color-pink: #dd4e54;
+  --color-pink-light: #b96276;
+  font-family: Trirong, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

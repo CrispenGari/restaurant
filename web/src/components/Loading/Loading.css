@@ -1,0 +1,30 @@
+.loading {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading > div {
+  width: 40px;
+  height: 40px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  animation: ripple 1.5s ease 0s infinite;
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

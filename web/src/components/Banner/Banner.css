@@ -1,0 +1,18 @@
+.banner {
+  background-color: var(--main-color);
+  background-blend-mode: lighten;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 50vh !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  user-zoom: none;
+  background-position: center;
+  background-image: url(https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=600);
+}
+.banner > h1 {
+  color: white;
+}

@@ -1,0 +1,8 @@
+
+type Mutation {
+    register(input: RegisterInput!): AuthResponse!
+    login(input: LoginInput!): AuthResponse!
+    addProduct(input: ProductInput!): Boolean!
+    updateProduct(input: ProductInput!): Boolean!
+    deleteProduct(id: Int!): Boolean!
+}

@@ -1,0 +1,7 @@
+
+
+input RegisterInput{
+    email: String!
+    role: UserRole!
+    password: String!
+}

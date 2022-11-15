@@ -1,0 +1,81 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  user-select: none;
+  user-zoom: none;
+}
+.login__card {
+  background-color: var(--main-color);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 5px;
+}
+.login__card > img {
+  width: 50px;
+  align-self: center;
+}
+.login__card > h1 {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 10px 0;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+.login__card > h1 > span:last-of-type {
+  margin-left: 10px;
+  border-bottom: 1px solid white;
+  flex: 1;
+}
+.login__card > h1:last-of-type {
+  font-weight: 500;
+}
+.login__card > input,
+.login__card > select {
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 999px;
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+.login__card > select {
+  border-radius: 5px;
+}
+.login__card > p {
+  color: red;
+  margin: 5px 0;
+  font-size: 0.8rem;
+}
+.login__card > button {
+  padding: 10px 10px;
+  width: 50% !important;
+  align-self: flex-end;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--color-pink);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  transition: all 1s;
+}
+.login__card > button:last-of-type {
+  background-color: var(--main-light);
+}
+.login__card > button:hover {
+  background-color: var(--color-pink-light);
+}
+
+@media only screen and (max-width: 768px) {
+  .login {
+    padding: 10px;
+    background-color: var(--main-color) !important;
+  }
+}

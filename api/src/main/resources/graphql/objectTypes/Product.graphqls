@@ -1,0 +1,10 @@
+
+
+type Product{
+    id: Int!
+    imageURL: String!
+    productName: String!
+    productCurrentPrice: Float!
+    onSpecial: Boolean
+    previousPrice: Float
+}

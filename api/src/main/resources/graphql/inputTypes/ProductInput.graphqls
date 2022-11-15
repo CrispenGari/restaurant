@@ -1,0 +1,10 @@
+
+
+input ProductInput{
+    imageURL: String!
+    name: String!
+    productName: String!
+    productCurrentPrice: Float!
+    onSpecial: Boolean
+    previousPrice: Float
+}
