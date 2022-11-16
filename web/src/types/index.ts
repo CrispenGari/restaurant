@@ -1,4 +1,4 @@
-import { User } from "../graphql/generated/graphql";
+import { Product, User } from "../graphql/generated/graphql";
 
 export interface ActionTye<T> {
   payload: T;
@@ -7,5 +7,5 @@ export interface ActionTye<T> {
 
 export interface StateType {
   user: User | null;
-  cart: any[];
+  cart: Product[];
 }

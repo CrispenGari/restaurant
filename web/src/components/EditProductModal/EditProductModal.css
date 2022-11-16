@@ -1,0 +1,102 @@
+.edit__product__modal {
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.edit__product__modal__container {
+  background-color: var(--main-color);
+  outline: none !important;
+  user-select: none;
+  user-zoom: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.edit__product__close__btn {
+  background-color: var(--color-pink);
+  font-size: 1rem;
+  color: white !important;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.edit__product__modal__container > img {
+  width: 100%;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.edit__product__modal__container > h1 {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 10px 0;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+.edit__product__modal__container > h1 > span:last-of-type {
+  margin-left: 10px;
+  border-bottom: 1px solid white;
+  flex: 1;
+}
+.edit__product__modal__container > h1:last-of-type {
+  font-weight: 500;
+}
+.edit__product__modal__container > input,
+.edit__product__modal__container > select {
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 999px;
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+.edit__product__modal__container > select {
+  border-radius: 5px;
+}
+.edit__product__modal__container > p {
+  color: red;
+  margin: 5px 0;
+  font-size: 0.8rem;
+}
+.edit__product__modal__contrls {
+  display: flex;
+}
+.edit__product__modal__contrls > button {
+  padding: 10px 10px;
+  width: 50% !important;
+  align-self: flex-end;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--color-pink);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  transition: all 1s;
+}
+.edit__product__modal__contrls > button:last-of-type {
+  background-color: var(--main-light);
+  margin-left: 10px;
+}
+.edit__product__modal__contrls > button:hover,
+.edit__product__close__btn:hover {
+  background-color: var(--color-pink-light);
+}
+
+@media only screen and (max-width: 768px) {
+  .edit__product__modal {
+    padding: 10px;
+    background-color: var(--main-color) !important;
+  }
+}

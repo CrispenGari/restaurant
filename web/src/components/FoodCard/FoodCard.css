@@ -24,6 +24,7 @@
 }
 .food__card__price {
   font-weight: 600;
+  margin: unset !important;
 }
 
 .food__card__button {
@@ -56,4 +57,7 @@
 
 .food__card__button:hover {
   background-color: var(--main-light) !important;
+}
+.food__card__price__previous {
+  text-decoration: line-through red;
 }

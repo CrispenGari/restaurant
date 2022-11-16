@@ -9,7 +9,12 @@
   top: 0;
   z-index: 10;
 }
-
+.header__right > h1 {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
 .header__right__cart {
   color: white;
   font-size: 2rem;

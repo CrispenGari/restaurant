@@ -1,11 +1,11 @@
 import React from "react";
 import { useProductsQuery } from "../../graphql/generated/graphql";
-
 import FoodCard from "../FoodCard/FoodCard";
 import "./Main.css";
 interface Props {}
 const Main: React.FC<Props> = () => {
   const { data } = useProductsQuery({ fetchPolicy: "network-only" });
+
   return (
     <div className="main">
       <div className="main__header">

@@ -5,7 +5,34 @@
   flex-direction: column;
   overflow-y: scroll;
   overflow-x: hidden;
+  position: relative;
 }
 .home::-webkit-scrollbar {
   display: none;
+}
+
+.home__add__product__btn {
+  position: sticky;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9;
+  background-color: var(--main-color);
+  padding: 10px !important;
+  align-self: flex-end;
+  color: white !important;
+  cursor: pointer;
+  border-radius: 50%;
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  transition: all 1s;
+  color: white;
+}
+
+.home__add__product__btn:hover {
+  background-color: var(--main-light) !important;
 }

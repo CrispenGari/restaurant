@@ -4,13 +4,22 @@ import { ActionTye } from "../../types";
 
 export const cartReducer = (
   state: Product[] = [],
-  { payload, type }: ActionTye<any>
+  { payload, type }: ActionTye<Product | null>
 ) => {
   switch (type) {
     case ADD_TO_CART:
-      return (state = [...state, payload]);
+      return (state = [...state, payload as any]);
     case REMOVE_FROM_CART:
-      return (state = state.filter((p) => p.id !== payload.id));
+      const index = state.findIndex((p) => p.id === (payload as any).id);
+      return (state = state
+        .filter((_, idx) => {
+          if (idx !== index) {
+            return _;
+          } else {
+            return null;
+          }
+        })
+        .filter((p) => p !== null));
     case EMPTY_CART:
       return (state = []);
     default:

@@ -1,0 +1,51 @@
+.basket__product {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  margin: 5px 0;
+}
+.basket__product > img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.basket__product__right {
+  flex: 1;
+  padding: 0px 10px;
+}
+.basket__product__right > h1 {
+  font-size: 1rem;
+}
+.basket__product__price {
+  font-weight: 600;
+  margin: unset !important;
+}
+.basket__product__price__previous {
+  text-decoration: line-through red;
+}
+
+.basket__product__controls {
+  display: flex;
+}
+.basket__product__controls > button {
+  padding: 10px 10px;
+  align-self: flex-end;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--color-pink);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  transition: all 1s;
+  width: 200px !important;
+}
+.basket__product__controls > button:last-of-type {
+  background-color: var(--main-light);
+  margin-left: 10px;
+}
+.basket__product__controls > button:hover,
+.add__product__close__btn:hover {
+  background-color: var(--color-pink-light);
+}

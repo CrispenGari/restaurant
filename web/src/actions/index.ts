@@ -4,7 +4,7 @@ import {
   REMOVE_FROM_CART,
   SET_USER,
 } from "../constants";
-import { User } from "../graphql/generated/graphql";
+import { Product, User } from "../graphql/generated/graphql";
 import { ActionTye } from "../types";
 
 export const setUser = (payload: User | null): ActionTye<User | null> => {
@@ -14,22 +14,22 @@ export const setUser = (payload: User | null): ActionTye<User | null> => {
   };
 };
 
-export const addToCart = (payload: any) => {
+export const addToCart = (payload: Product) => {
   return {
     payload,
     type: ADD_TO_CART,
   };
 };
-export const removeToCart = (payload: any) => {
+export const removeFromCart = (payload: Product) => {
   return {
     payload,
     type: REMOVE_FROM_CART,
   };
 };
 
-export const emptyCart = (payload: any) => {
+export const emptyCart = () => {
   return {
-    payload,
+    payload: null,
     type: EMPTY_CART,
   };
 };

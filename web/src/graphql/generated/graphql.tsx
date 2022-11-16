@@ -63,6 +63,7 @@ export type MutationRegisterArgs = {
 
 
 export type MutationUpdateProductArgs = {
+  id: Scalars['Int'];
   input: ProductInput;
 };
 
@@ -78,7 +79,6 @@ export type Product = {
 
 export type ProductInput = {
   imageURL: Scalars['String'];
-  name: Scalars['String'];
   onSpecial?: InputMaybe<Scalars['Boolean']>;
   previousPrice?: InputMaybe<Scalars['Float']>;
   productCurrentPrice: Scalars['Float'];
@@ -150,6 +150,7 @@ export type RegisterMutation = { __typename?: 'Mutation', register: { __typename
 
 export type UpdateProductMutationVariables = Exact<{
   input: ProductInput;
+  id: Scalars['Int'];
 }>;
 
 
@@ -324,8 +325,8 @@ export type RegisterMutationHookResult = ReturnType<typeof useRegisterMutation>;
 export type RegisterMutationResult = Apollo.MutationResult<RegisterMutation>;
 export type RegisterMutationOptions = Apollo.BaseMutationOptions<RegisterMutation, RegisterMutationVariables>;
 export const UpdateProductDocument = gql`
-    mutation UpdateProduct($input: ProductInput!) {
-  updateProduct(input: $input)
+    mutation UpdateProduct($input: ProductInput!, $id: Int!) {
+  updateProduct(input: $input, id: $id)
 }
     `;
 export type UpdateProductMutationFn = Apollo.MutationFunction<UpdateProductMutation, UpdateProductMutationVariables>;
@@ -344,6 +345,7 @@ export type UpdateProductMutationFn = Apollo.MutationFunction<UpdateProductMutat
  * const [updateProductMutation, { data, loading, error }] = useUpdateProductMutation({
  *   variables: {
  *      input: // value for 'input'
+ *      id: // value for 'id'
  *   },
  * });
  */

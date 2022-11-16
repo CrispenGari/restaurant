@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes as R, Route, BrowserRouter } from "react-router-dom";
-import Admin from "./Admim/Admin";
 import Checkout from "./Checkout/Checkout";
 import Home from "./Home/Home";
 import Login from "./Login/Login";
@@ -13,7 +12,6 @@ const Routes: React.FC<Props> = () => {
       <R>
         <Route path="/" caseSensitive element={<Home />} />
         <Route path="/checkout" caseSensitive element={<Checkout />} />
-        <Route path="/admin" caseSensitive element={<Admin />} />
         <Route path="/login" caseSensitive element={<Login />} />
         <Route path="/register" caseSensitive element={<Register />} />
         <Route path="*" element={<NotFound />} caseSensitive />

@@ -1,13 +1,9 @@
 package com.example.api.product;
-
-
-import com.example.api.user.RoleType;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-
 @Data
 @Entity
 @Table(name="products")
