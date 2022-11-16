@@ -6,9 +6,6 @@ import com.example.api.resolvers.products.objects.ProductObjectType;
 import lombok.AllArgsConstructor;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
-
-import java.lang.reflect.Array;
-import java.util.Collection;
 import java.util.List;
 
 
