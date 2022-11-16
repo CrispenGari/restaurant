@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Loading } from "../../components";
 import { useRegisterMutation } from "../../graphql/generated/graphql";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./Register.css";
 import { setUser } from "../../actions";
+import { StateType } from "../../types";
 interface Props {}
 const Register: React.FC<Props> = () => {
   const [email, setEmail] = useState("");
@@ -14,6 +15,9 @@ const Register: React.FC<Props> = () => {
   const [conf, setConf] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [l, setLoading] = useState(true);
+  const user = useSelector(({ user }: StateType) => user);
+
   const [register, { data, loading }] = useRegisterMutation({
     fetchPolicy: "network-only",
   });
@@ -51,6 +55,25 @@ const Register: React.FC<Props> = () => {
       navigate("/", { replace: true });
     }
   }, [data, navigate, dispatch]);
+
+  React.useEffect(() => {
+    let mounted: boolean = true;
+    if (mounted) {
+      if (user) {
+        navigate("/", { replace: true });
+        setLoading(false);
+      } else {
+        setLoading(false);
+      }
+    }
+    return () => {
+      mounted = false;
+    };
+  }, [user, navigate]);
+
+  if (l) {
+    return <Loading />;
+  }
 
   return (
     <div className="register">

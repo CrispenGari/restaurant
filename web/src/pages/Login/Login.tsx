@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setUser } from "../../actions";
 import { Loading } from "../../components";
 import { useLoginMutation } from "../../graphql/generated/graphql";
+import { StateType } from "../../types";
 import "./Login.css";
 interface Props {}
-const Login: React.FC<Props> = ({}) => {
+const Login: React.FC<Props> = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [l, setLoading] = useState(true);
+  const user = useSelector(({ user }: StateType) => user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [login, { data, loading }] = useLoginMutation({
@@ -40,6 +43,24 @@ const Login: React.FC<Props> = ({}) => {
       navigate("/", { replace: true });
     }
   }, [data, navigate, dispatch]);
+  React.useEffect(() => {
+    let mounted: boolean = true;
+    if (mounted) {
+      if (user) {
+        navigate("/", { replace: true });
+        setLoading(false);
+      } else {
+        setLoading(false);
+      }
+    }
+    return () => {
+      mounted = false;
+    };
+  }, [user, navigate]);
+
+  if (l) {
+    return <Loading />;
+  }
 
   return (
     <div className="login">

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { StateType } from "../../types";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Badge } from "@mui/material";
-import { setUser } from "../../actions";
+import { emptyCart, setUser } from "../../actions";
 interface Props {}
 const Header: React.FC<Props> = () => {
   const user = useSelector(({ user }: StateType) => user);
@@ -40,7 +40,14 @@ const Header: React.FC<Props> = () => {
                 <AiOutlineShoppingCart className="header__right__cart" />
               </Badge>
             )}
-            <button onClick={() => dispatch(setUser(null))}>LOGOUT</button>
+            <button
+              onClick={() => {
+                dispatch(setUser(null));
+                dispatch(emptyCart());
+              }}
+            >
+              LOGOUT
+            </button>
           </>
         ) : (
           <>
