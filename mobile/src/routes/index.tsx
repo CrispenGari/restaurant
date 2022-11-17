@@ -2,7 +2,14 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { AppParamsList } from "../params";
-import { Checkout, Home, Login, Register } from "../screens";
+import {
+  Checkout,
+  DeleteProduct,
+  EditProduct,
+  Home,
+  Login,
+  Register,
+} from "../screens";
 import { Header } from "../components";
 const Stack = createStackNavigator<AppParamsList>();
 const Routes = () => (
@@ -17,6 +24,8 @@ const Routes = () => (
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Checkout" component={Checkout} />
       <Stack.Screen name="Register" component={Register} />
+      <Stack.Screen name="EditProduct" component={EditProduct} />
+      <Stack.Screen name="DeleteProduct" component={DeleteProduct} />
     </Stack.Navigator>
   </NavigationContainer>
 );

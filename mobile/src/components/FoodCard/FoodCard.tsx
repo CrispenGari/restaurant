@@ -5,12 +5,14 @@ import { colors } from "../../constants";
 import { Product } from "../../graphql/generated/graphql";
 import { useDispatch, useSelector } from "react-redux";
 import { StateType } from "../../types";
-import { addToCart, setProductToDelete, setProductToEdit } from "../../actions";
+import { addToCart } from "../../actions";
+import { AppNavProps } from "../../params";
 
 interface Props {
   item: Product;
+  navProps: AppNavProps<"Home">;
 }
-const FoodCard: React.FC<Props> = ({ item }) => {
+const FoodCard: React.FC<Props> = ({ item, navProps: { navigation } }) => {
   const { user } = useSelector((state: StateType) => state);
 
   const dispatch = useDispatch();
@@ -83,7 +85,11 @@ const FoodCard: React.FC<Props> = ({ item }) => {
               alignItems: "center",
               marginRight: 15,
             }}
-            onPress={() => dispatch(setProductToDelete(item))}
+            onPress={() => {
+              navigation.navigate("DeleteProduct", {
+                product: item,
+              });
+            }}
           >
             <Ionicons name="trash-outline" size={24} color="white" />
           </TouchableOpacity>
@@ -97,7 +103,9 @@ const FoodCard: React.FC<Props> = ({ item }) => {
               justifyContent: "center",
               alignItems: "center",
             }}
-            onPress={() => dispatch(setProductToEdit(item))}
+            onPress={() => {
+              navigation.navigate("EditProduct", { product: item });
+            }}
           >
             <MaterialIcons name="create" size={24} color="white" />
           </TouchableOpacity>

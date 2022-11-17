@@ -1,5 +1,6 @@
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RouteProp } from "@react-navigation/native";
+import { Product } from "../graphql/generated/graphql";
 
 // Authentication Param Lists
 export type AppParamsList = {
@@ -7,6 +8,12 @@ export type AppParamsList = {
   Register: undefined;
   Home: undefined;
   Checkout: undefined;
+  EditProduct: {
+    product: Product;
+  };
+  DeleteProduct: {
+    product: Product;
+  };
 };
 
 export type AppNavProps<T extends keyof AppParamsList> = {

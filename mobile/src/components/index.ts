@@ -4,6 +4,4 @@ export { default as Banner } from "./Banner/Banner";
 export { default as FoodCard } from "./FoodCard/FoodCard";
 export { default as Divider } from "./Divider/Divider";
 export { default as Submiting } from "./Submiting/Submiting";
-export { default as EditProductModal } from "./EditProductModal/EditProductModal";
-export { default as DeleteProductModal } from "./DeleteProductModal/DeleteProductModal";
 export { default as ContentHeader } from "./ContentHeader/ContentHeader";

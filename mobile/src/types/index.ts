@@ -8,8 +8,6 @@ export interface ActionType<T> {
 export interface StateType {
   user: User | null;
   cart: ProductType[];
-  productToDelete: Product | null;
-  productToEdit: Product | null;
 }
 
 export type ProductType = {

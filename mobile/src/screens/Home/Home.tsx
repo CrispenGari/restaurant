@@ -1,16 +1,10 @@
 import { ScrollView, View, Dimensions } from "react-native";
 import React, { useState } from "react";
-import {
-  Banner,
-  ContentHeader,
-  DeleteProductModal,
-  FoodCard,
-} from "../../components";
+import { Banner, ContentHeader, FoodCard } from "../../components";
 import { Product, useProductsQuery } from "../../graphql/generated/graphql";
 import { WaveIndicator } from "react-native-indicators";
 import { colors } from "../../constants";
-import { useSelector } from "react-redux";
-import { StateType } from "../../types";
+import { AppNavProps } from "../../params";
 
 interface ProductsType {
   chapter: {
@@ -20,9 +14,7 @@ interface ProductsType {
   };
   data: Product[];
 }
-const Home = () => {
-  const { productToDelete } = useSelector((state: StateType) => state);
-
+const Home: React.FC<AppNavProps<"Home">> = (navProps) => {
   const [products, setProducts] = useState<Array<ProductsType>>([]);
   const { loading, data } = useProductsQuery({ fetchPolicy: "network-only" });
   React.useEffect(() => {
@@ -59,9 +51,7 @@ const Home = () => {
       showsHorizontalScrollIndicator={false}
       bounces={false}
       contentContainerStyle={{ paddingBottom: 100 }}
-      // scrollEnabled={!!!productToDelete}
     >
-      {productToDelete ? <DeleteProductModal item={productToDelete} /> : null}
       <Banner />
       {loading ? (
         <View
@@ -72,15 +62,25 @@ const Home = () => {
         >
           <WaveIndicator color={colors.MAIN_COLOR} size={35} />
         </View>
-      ) : null}
-      {products.map(({ chapter, data }) => (
-        <React.Fragment key={chapter.id.toString()}>
-          <ContentHeader title={chapter.title} subTitle={chapter.subTitle} />
-          {data.map((item) => (
-            <FoodCard key={item.id.toString()} item={item} />
+      ) : (
+        <>
+          {products.map(({ chapter, data }) => (
+            <React.Fragment key={chapter.id.toString()}>
+              <ContentHeader
+                title={chapter.title}
+                subTitle={chapter.subTitle}
+              />
+              {data.map((item) => (
+                <FoodCard
+                  key={item.id.toString()}
+                  item={item}
+                  navProps={navProps}
+                />
+              ))}
+            </React.Fragment>
           ))}
-        </React.Fragment>
-      ))}
+        </>
+      )}
     </ScrollView>
   );
 };

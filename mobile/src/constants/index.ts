@@ -4,8 +4,6 @@ export const SET_USER: string = "SET_USER";
 export const ADD_TO_CART: string = "ADD_TO_CART";
 export const EMPTY_CART: string = "EMPTY_CART";
 export const REMOVE_FROM_CART: string = "REMOVE_FROM_CART";
-export const SET_PRODUCT_TO_DELETE: string = "SET_PRODUCT_TO_DELETE";
-export const SET_PRODUCT_TO_EDIT: string = "SET_PRODUCT_TO_EDIT";
 
 export const colors = {
   MAIN_COLOR: "#173728",
