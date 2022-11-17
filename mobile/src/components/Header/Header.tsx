@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   Image,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import React from "react";
 import { colors } from "../../constants";
@@ -36,16 +37,22 @@ const Header: React.FC<Props> = ({ props: { navigation } }) => {
             justifyContent: "space-between",
           }}
         >
-          <Image
-            source={{
-              uri: Image.resolveAssetSource(require("../../../assets/logo.png"))
-                .uri,
-            }}
-            style={{
-              width: 40,
-              height: 40,
-            }}
-          />
+          <TouchableOpacity
+            activeOpacity={0.9}
+            onPress={() => navigation.navigate("Home")}
+          >
+            <Image
+              source={{
+                uri: Image.resolveAssetSource(
+                  require("../../../assets/logo.png")
+                ).uri,
+              }}
+              style={{
+                width: 40,
+                height: 40,
+              }}
+            />
+          </TouchableOpacity>
 
           {!!!user ? (
             <View
@@ -154,8 +161,28 @@ const Header: React.FC<Props> = ({ props: { navigation } }) => {
               )}
               <TouchableOpacity
                 onPress={() => {
-                  dispatch(setUser(null));
-                  dispatch(emptyCart());
+                  Alert.alert(
+                    "Restaurant",
+                    "You can't add items to cart without login to the app.",
+                    [
+                      {
+                        text: "LOGOUT",
+                        style: "destructive",
+                        onPress: () => {
+                          dispatch(setUser(null));
+                          dispatch(emptyCart());
+                        },
+                      },
+                      {
+                        text: "CANCEL",
+                        style: "destructive",
+                        onPress: () => {
+                          return;
+                        },
+                      },
+                    ],
+                    { cancelable: false }
+                  );
                 }}
                 style={{
                   width: 80,

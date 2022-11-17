@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, Alert } from "react-native";
 import React from "react";
 import { FontAwesome, Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { colors } from "../../constants";
@@ -129,7 +129,33 @@ const FoodCard: React.FC<Props> = ({ item, navProps: { navigation } }) => {
               justifyContent: "center",
               alignItems: "center",
             }}
-            onPress={() => dispatch(addToCart(item))}
+            onPress={() => {
+              if (!!user) {
+                dispatch(addToCart(item));
+              } else {
+                Alert.alert(
+                  "Restaurant",
+                  "You can't add items to cart without login to the app.",
+                  [
+                    {
+                      text: "LOGIN",
+                      style: "destructive",
+                      onPress: () => {
+                        navigation.navigate("Login");
+                      },
+                    },
+                    {
+                      text: "CANCEL",
+                      style: "destructive",
+                      onPress: () => {
+                        return;
+                      },
+                    },
+                  ],
+                  { cancelable: false }
+                );
+              }
+            }}
           >
             <FontAwesome name="cart-plus" size={24} color="white" />
           </TouchableOpacity>

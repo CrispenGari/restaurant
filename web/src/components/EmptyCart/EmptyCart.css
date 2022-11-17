@@ -40,3 +40,14 @@
   border-bottom: 1px solid white;
   flex: 1;
 }
+
+.empty__cart > h2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
