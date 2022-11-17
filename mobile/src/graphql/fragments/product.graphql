@@ -1,0 +1,8 @@
+fragment ProductFragment on Product {
+  id
+  imageURL
+  productName
+  productCurrentPrice
+  onSpecial
+  previousPrice
+}

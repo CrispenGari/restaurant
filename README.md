@@ -1,6 +1,6 @@
 ### restaurant
 
-🥐🥙🥗 this is a simple restaurant web application build with Java as backend with GraphQL and React for the frontend.
+🥐🥙🥗 this is a simple restaurant `web` and `mobile` application build with `Java` as backend with `GraphQL`,  `React` for the web and `React Native` for mobile.
 
 <p align="center">
     <img width="50%" src="/logo.png"/>
@@ -13,6 +13,10 @@ Java backend with `springboot`, `graphql` and `mysql`
 ### web
 
 A `web` application is a react app with `redux` as state management and `mui` for modal components and `badges`.
+
+### mobile
+This is a mobile version of this app, built using `react-native`, `redux` and graphql.
+
 
 ### License
 

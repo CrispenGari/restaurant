@@ -13,11 +13,14 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   graphql:
-    graphiql:
+    playground:
+      mapping: /playground
+      endpoint: /graphql
+      subscriptionEndpoint: /subscriptions
+      staticPath.base: my-playground-resources-folder
       enabled: true
-      path: /graphiql
+      pageTitle: Playground
 
 server:
   port: 3001

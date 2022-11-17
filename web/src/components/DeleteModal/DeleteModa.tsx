@@ -52,7 +52,7 @@ const DeleteModal: React.FC<Props> = ({ open, onClose, product }) => {
       onClose();
     }
     if (data?.deleteProduct === false) {
-      setError("Invalid form for adding a product.");
+      setError("Invalid form for deleting a product.");
     } else {
       setError("");
     }
