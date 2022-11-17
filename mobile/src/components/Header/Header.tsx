@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { StateType } from "../../types";
 import { emptyCart, setUser } from "../../actions";
 import { StackHeaderProps } from "@react-navigation/stack";
+import { MaterialIcons } from "@expo/vector-icons";
 interface Props {
   props: StackHeaderProps;
 }
@@ -147,17 +148,36 @@ const Header: React.FC<Props> = ({ props: { navigation } }) => {
                   <AntDesign name="shoppingcart" size={40} color="white" />
                 </TouchableOpacity>
               ) : (
-                <Text
-                  style={{
-                    letterSpacing: 1,
-                    color: "white",
-                    fontWeight: "600",
-                    fontSize: 20,
-                    marginRight: 10,
-                  }}
-                >
-                  ADMIN
-                </Text>
+                <>
+                  <Text
+                    style={{
+                      letterSpacing: 1,
+                      color: "white",
+                      fontWeight: "600",
+                      fontSize: 20,
+                      marginHorizontal: 5,
+                    }}
+                  >
+                    ADMIN
+                  </Text>
+                  <TouchableOpacity
+                    activeOpacity={0.7}
+                    style={{
+                      backgroundColor: colors.MAIN_LIGHT,
+                      width: 42,
+                      height: 42,
+                      borderRadius: 42,
+                      justifyContent: "center",
+                      alignItems: "center",
+                      marginHorizontal: 5,
+                    }}
+                    onPress={() => {
+                      navigation.navigate("AddProduct", {});
+                    }}
+                  >
+                    <MaterialIcons name="create" size={24} color="white" />
+                  </TouchableOpacity>
+                </>
               )}
               <TouchableOpacity
                 onPress={() => {
@@ -187,7 +207,7 @@ const Header: React.FC<Props> = ({ props: { navigation } }) => {
                 style={{
                   width: 80,
                   backgroundColor: colors.COLOR_PINK,
-                  marginLeft: 20,
+                  marginLeft: user.role === "ADMIN" ? 5 : 15,
                   alignItems: "center",
                   paddingVertical: 10,
                   borderRadius: 5,

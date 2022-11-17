@@ -46,7 +46,7 @@ const Home: React.FC<AppNavProps<"Home">> = (navProps) => {
   }, [data]);
   return (
     <ScrollView
-      style={{ flex: 1, backgroundColor: "#f5f5f5" }}
+      style={{ flex: 1, backgroundColor: "#f5f5f5", position: "relative" }}
       showsVerticalScrollIndicator={false}
       showsHorizontalScrollIndicator={false}
       bounces={false}

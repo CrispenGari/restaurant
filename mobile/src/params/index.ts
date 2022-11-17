@@ -14,6 +14,7 @@ export type AppParamsList = {
   DeleteProduct: {
     product: Product;
   };
+  AddProduct: {};
 };
 
 export type AppNavProps<T extends keyof AppParamsList> = {

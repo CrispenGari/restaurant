@@ -16,7 +16,7 @@ export const fonts = {
 };
 
 export const __graphQLURI__: string =
-  "https://04e3-197-98-127-119.ngrok.io/graphql";
+  "https://d203-197-98-127-119.ngrok.io/graphql";
 
 export const { height: HEIGHT, width: WIDTH } = Dimensions.get("screen");
 
